@@ -11,7 +11,7 @@
   - Takes the document link from the request body.
   - Takes the job description from the document link.
   - Generates the summarized version of the job description, retaining the key skills, essentional keywords and important information about the company.
-  - Stores the summarized version in the database and sends a positive response.  
+  - Stores the summarized version in the database and sends a positive response.
 
 #### POST `api/data/master-data`
 
@@ -32,6 +32,9 @@
 ### Data Generation APIs
 
 #### POST `api/generate/skills`
+
 #### POST `api/generate/projects`
+
 #### POST `api/generate/summary`
+
 #### POST `api/generate/ats-check`
