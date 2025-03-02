@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:13
+    restart: always
+    container_name: db
+    environment:
+      POSTGRES_USER: db_user
+      POSTGRES_PASSWORD: db_1234
+      POSTGRES_DB: db_prj
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  vector_db:
+    image: pgvector/pgvector:pg16
+    restart: always
+    container_name: vector_db
+    command: ["postgres", "-c", "port=5433"]
+    ports:
+      - "5433:5433"
+    volumes:
+      - vector_db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
+  vector_db_data:
