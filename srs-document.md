@@ -33,8 +33,40 @@
 
 #### POST `api/generate/skills`
 
+- **Purpose**: Suggests the technical skills for the resume.
+- **Logic**:
+  - Takes the stored job description.
+  - Gets the content of the resume using the stored document link.
+  - Adds the job description and resume content into the prompt template.
+  - Sends the prompt template to the LLM to generate the response.
+  - Returns a positive response along with the generated response.
+
 #### POST `api/generate/projects`
+
+- **Purpose**: Suggests projects for the resume along with the updated description.
+- **Logic**:
+  - Takes the stored job description.
+  - Gets the relevant master data content chunk from the vector database.
+  - Adds the job description and relevant content chunk into the prompt template.
+  - Sends the prompt template to the LLM to generate the response.
+  - Returns a positive response along with the generated response.
 
 #### POST `api/generate/summary`
 
+- **Purpose**: Suggests the professional summary for the resume.
+- **Logic**:
+  - Takes the stored job description.
+  - Gets the content of the resume using the stored document link.
+  - Adds the job description and resume content into the prompt template.
+  - Sends the prompt template to the LLM to generate the response.
+  - Returns a positive response along with the generated response.
+
 #### POST `api/generate/ats-check`
+
+- **Purpose**: Rates the resume's ATS score and suggests the updates for increasing the score.
+- **Logic**:
+  - Takes the stored job description.
+  - Gets the content of the resume using the stored document link.
+  - Adds the job description and resume content into the prompt template.
+  - Sends the prompt template to the LLM to generate the response.
+  - Returns a positive response along with the generated response.
