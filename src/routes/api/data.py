@@ -6,7 +6,12 @@ data_api = Blueprint("data_api", __name__)
 @data_api.route("/job-description", methods=["POST"])
 def post_job_description():
     # Takes the document link from the request body.
+    data = request.get_json()
+    document_link = data.get("document_link")
+
     # Takes the job description from the document link.
+    
+    
     # Generates the summarized version of the job description, retaining the key skills, essentional keywords and important information about the company.
     # Stores the summarized version in the database and sends a positive response.
     return jsonify(response(True, "Job description is stored.")), 201
